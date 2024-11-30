@@ -37,8 +37,8 @@ public class AutorDAOPrincipal {
 		
 		//findOne
 		try {
-			Autor cliente3= autorDAO.findOne(41);
-			System.out.println(cliente3.toString());
+			Autor autor3= autorDAO.findOne(41);
+			System.out.println(autor3.toString());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

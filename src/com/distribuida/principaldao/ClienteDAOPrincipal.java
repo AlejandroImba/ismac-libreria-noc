@@ -33,7 +33,7 @@ public class ClienteDAOPrincipal {
 		
 		//Delete
 		
-		clienteDAO.del(41);
+		//clienteDAO.del(41);
 		
 		
 		//findOne
