@@ -19,7 +19,7 @@ public class AutorDAOPrincipal {
 		
 		//Insert
 		
-		Autor autor=new Autor(0, "Tio", "Chill", "Ecuador", "Av.micasa girando a la izquierda", "094561237","tiochill@outlook.com");
+		Autor autor=new Autor(0, "Tia", "Chill", "Ecuador", "Av.micasa girando a la izquierda", "094561237","tiochill@outlook.com");
 		
 		//autorDAO.add(autor);
 		

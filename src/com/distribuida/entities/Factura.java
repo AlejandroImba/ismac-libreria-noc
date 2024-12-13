@@ -12,19 +12,12 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import org.springframework.core.GenericTypeResolver;
-
-
 @Entity
 @Table(name="factura")
 public class Factura {
 	
 	///SQL : 1 A 1     <> JAVA = @OneToOne
 	/// SQL: 1 A N   <>  JAVA = @OneToMany   or @ManyToOne
-	
-	
-	
-	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="id_factura")
@@ -39,16 +32,12 @@ public class Factura {
 	private Double iva;
 	@Column(name="total")
 	private Double total;
-
 	//private int idCliente;
 	@JoinColumn(name= "id_cliente")
 	@ManyToOne(cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH})
 	private Cliente cliente;
-	
 	public Factura() {
-		
 	}
-
 	public Factura(int idFactura, String numFactura, Date fecha, Double totalNeto, Double iva, Double total,
 			Cliente cliente) {
 		this.idFactura = idFactura;
@@ -59,11 +48,9 @@ public class Factura {
 		this.total = total;
 		this.cliente = cliente;
 	}
-
 	public int getIdFactura() {
 		return idFactura;
 	}
-
 	public void setIdFactura(int idFactura) {
 		this.idFactura = idFactura;
 	}

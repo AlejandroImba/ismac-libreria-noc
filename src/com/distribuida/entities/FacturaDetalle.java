@@ -1,13 +1,38 @@
 package com.distribuida.entities;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+@Entity
+@Table(name="factura_detalle")
 public class FacturaDetalle {
-	
-	private int idFacturadetalle;
+
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="id_factura_detalle")
+	private int idFacturaDetalle;
+	@Column(name="cantidad")
 	private int cantidad;
+	@Column(name="subtotal")
 	private double subtotal;
 	
+	///FOREING
+	@JoinColumn(name= "id_factura")
+	@ManyToOne(cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH})
 	private Factura factura;
+	@JoinColumn(name= "id_libro")
+	@ManyToOne(cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH})
 	private Libro libro;
+	
+	
+	
+	
 	
 	public FacturaDetalle() {
 		
@@ -15,7 +40,7 @@ public class FacturaDetalle {
 
 	public FacturaDetalle(int idFacturadetalle, int cantidad, double subtotal, Factura factura, Libro libro) {
 		
-		this.idFacturadetalle = idFacturadetalle;
+		this.idFacturaDetalle = idFacturadetalle;
 		this.cantidad = cantidad;
 		this.subtotal = subtotal;
 		this.factura = factura;
@@ -23,11 +48,11 @@ public class FacturaDetalle {
 	}
 
 	public int getIdFacturadetalle() {
-		return idFacturadetalle;
+		return idFacturaDetalle;
 	}
 
 	public void setIdFacturadetalle(int idFacturadetalle) {
-		this.idFacturadetalle = idFacturadetalle;
+		this.idFacturaDetalle = idFacturadetalle;
 	}
 
 	public int getCantidad() {
@@ -64,7 +89,7 @@ public class FacturaDetalle {
 
 	@Override
 	public String toString() {
-		return "FacturaDetalle [idFacturadetalle=" + idFacturadetalle + ", cantidad=" + cantidad + ", subtotal="
+		return "FacturaDetalle [idFacturadetalle=" + idFacturaDetalle + ", cantidad=" + cantidad + ", subtotal="
 				+ subtotal + ", factura=" + factura + ", libro=" + libro + "]";
 	}
 	

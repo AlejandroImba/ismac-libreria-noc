@@ -7,15 +7,10 @@ import com.distribuida.entities.Categoria;
 import com.distribuida.entities.Libro;
 
 public class LibroPrincipal {
-
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		
 		Categoria categoria=new Categoria(1,"Terror","Historias de terror que transmiten todos los sentimientos");
 		Autor autor=new Autor(1,"Robert de","Niro","España","Madrid","5748199932","deniro@hotmail.com");
-
 		Libro libro=new Libro();
-		
 		libro.setIdLibro(1);
 		libro.setTitulo("Alicia en el pais de las maravillas");
 		libro.setEditorial("Editorial Ecuatorial");
@@ -32,7 +27,6 @@ public class LibroPrincipal {
 		libro.setPrecio(15.76);
 		libro.setCategoria(categoria);
 		libro.setAutor(autor);
-		
 		System.out.println(libro);
 		
 		
