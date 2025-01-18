@@ -17,7 +17,7 @@ public class LibroPrincipal {
 		libro.setNumPaginas(276);
 		libro.setEdicion("Edicion #1");
 		libro.setIdioma("Español");
-		libro.setFechaPublicacion(new Date());
+	
 		libro.setDescripcion("Una chica perdida en un lugar maravillosa");
 		libro.setTipoPasta("Pasta dura");
 		libro.setiSBN("97884968*");
@@ -28,6 +28,7 @@ public class LibroPrincipal {
 		libro.setCategoria(categoria);
 		libro.setAutor(autor);
 		System.out.println(libro);
+		libro.setFechaPublicacion(new Date());
 		
 		
 	}
